@@ -7,12 +7,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'welcome#index'
-  
   get 'my_portfolio', to: 'users#my_portfolio'
-  
   get 'search_stocks', to: 'stocks#search'
+  resources :user_stocks, except: [:show, :edit, :update]
   
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
